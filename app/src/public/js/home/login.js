@@ -5,8 +5,6 @@ const id = document.querySelector("#id"),
     password = document.querySelector("#psword"),
     loginBtn = document.querySelector("button");
 
-console.log(id);
-
 loginBtn.addEventListener("click", login);
 
 function login(){
@@ -22,4 +20,6 @@ function login(){
         },
         body: JSON.stringify(req)
     })
+    .then((res) => res.json())
+    .then((res) => console.log(res));
 }

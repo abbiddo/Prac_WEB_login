@@ -16,6 +16,8 @@
 
 // 모듈
 const express = require("express");
+const bodyParser = require("body-parser");
+// npm install body-parser -s
 const app = express();
 // npm install express --save
 
@@ -31,6 +33,10 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs"); // ejs는 html과 매우 유사
 // npm install ejs -s
 app.use(express.static(`${__dirname}/src/public`));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+// url을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될 경우 인식되지 않는 문제 해결
+
 
 app.use("/", home); // use -> 미들 웨어를 등록해주는 메서드
 
