@@ -30,6 +30,7 @@ const home = require("./src/routes/home")
 app.set("views", "./src/views");
 app.set("view engine", "ejs"); // ejs는 html과 매우 유사
 // npm install ejs -s
+app.use(express.static(`${__dirname}/src/public`));
 
 app.use("/", home); // use -> 미들 웨어를 등록해주는 메서드
 
