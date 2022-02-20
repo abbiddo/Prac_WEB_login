@@ -7,6 +7,7 @@ const ctrl = require("./home.ctrl");
 
 router.get("/", ctrl.output.home); // localhost:3000
 router.get("/login", ctrl.output.login); // localhost:3000/login
+router.get("/register", ctrl.output.register); // localhost:3000/register
 router.post("/login", ctrl.process.login);
 
 module.exports = router;
